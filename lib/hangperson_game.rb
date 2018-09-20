@@ -17,11 +17,22 @@ class HangpersonGame
     @wrong_guesses = ''
   end
     
-    def word_with_guesses
+  def word_with_guesses
         
-    end
+  end
     
-
+  def guess_letter (letter)
+    if !letter.is_a?(String) || letter.nil? 
+      raise ArgumentError 
+    end 
+    
+    lc = letter.downcase!
+    if @word.include?(lc)
+      @guesses << lc
+    else 
+      @wrong_guesses << lc
+    end
+  end 
   # You can test it by running $ bundle exec irb -I. -r app.rb
   # And then in the irb: irb(main):001:0> HangpersonGame.get_random_word
   #  => "cooking"   <-- some random word
