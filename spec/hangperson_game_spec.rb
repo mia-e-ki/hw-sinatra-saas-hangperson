@@ -1,6 +1,7 @@
 require 'spec_helper'
 require 'hangperson_game'
 
+
 describe HangpersonGame do
   # helper function: make several guesses
   def guess_several_letters(game, letters)
@@ -9,7 +10,7 @@ describe HangpersonGame do
     end
   end
 
-  describe 'new', :pending => true do
+  describe 'new' do
     it "takes a parameter and returns a HangpersonGame object" do      
       @hangpersonGame = HangpersonGame.new('glorp')
       expect(@hangpersonGame).to be_an_instance_of(HangpersonGame)
