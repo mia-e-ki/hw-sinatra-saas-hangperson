@@ -77,7 +77,12 @@ class HangpersonApp < Sinatra::Base
   end
   
   get '/lose' do
-    ### YOUR CODE HERE ###
+    begin 
+      if @game.check_win_or_lose == :play
+        flash[:message] = "Are you okay?"
+        redirect '/show'
+      end
+    end
     erb :lose # You may change/remove this line
   end
   
